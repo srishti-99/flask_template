@@ -1,7 +1,8 @@
 # Flask Template 
 This template lays out a basic flask app that allows users to input, update and delete information into a PostgreSQL database. All html files that are to be rendered should go in the '/templates' directory and all css files should go in the '/static' directory. Make sure 'database.ini' and your '/data' directory are in .gitignore. 
 
-## Directories
+## Directory Structure
+
 	/flaskr
 		/templates 
 		/static 
