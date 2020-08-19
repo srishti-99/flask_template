@@ -1,11 +1,8 @@
 from pathlib import Path
 
 from flask import Flask, request, url_for, render_template, redirect, flash
-from bokeh.resources import CDN
-from bokeh.embed import file_html
 import psycopg2 as pg
 from psycopg2 import connect, Error
-import ujson as json
 import pandas as pd
 from . import db
 

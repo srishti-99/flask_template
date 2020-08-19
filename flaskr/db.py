@@ -2,12 +2,8 @@ import datetime
 from pathlib import Path
 from os import environ
 from configparser import ConfigParser
-from typing import Iterable, Any, Union, List, Dict, Set
-from contextlib import contextmanager
-import ujson as json
 import pandas as pd
 from psycopg2 import connect, Error
-from psycopg2.extras import Json
 
 class Data():
     def __init__(self, config_file='database.ini', timeout=5):
