@@ -1,0 +1,25 @@
+<html>
+    <head> 
+        <link rel="stylesheet" href={{ url_for('static', filename='insert.css') }}>
+        <title> Insert New User </title>
+    <head>
+
+    <body>
+        <h1> Update info for user {{ username }} </h1>
+        <div class="messages" border-color= black border-width= 3px>
+            {% include 'alerts.html' %}
+        </div>
+
+        <p id="demo"> </p>
+
+        <form name="new_user" action="{{username}}" method="POST" enctype="multipart/form-data"> 
+            First Name: 
+            <input type="text" maxlength="50" size="12" name="firstname" id="firstname" value=""/> <br/> 
+            Last Name: 
+            <input type="text" size="12" name="lastname" id="lastname" value=""/> <br/>
+            Bio: 
+            <input type="text" size="12" name="description" id="description" value=""/> <br/>
+            <button type="submit" id="submit" value=""> Submit </button>
+        </form>
+    </body>
+</html>

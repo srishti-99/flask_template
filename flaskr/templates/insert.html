@@ -1,0 +1,51 @@
+<html>
+    <head> 
+        <link rel="stylesheet" href={{ url_for('static', filename='insert.css') }}>
+        <title> Insert New User </title>
+    <head>
+
+    <body>
+
+        <h1> Insert new user </h1>
+        
+        <div class="messages" border-color= black border-width= 3px>
+            {% include 'alerts.html' %}
+        </div>
+
+        <p id="demo"> </p>
+        
+        <script>
+            function init(){
+                const username = document.getElementById('user_name');
+                const user_list = document.getElementById('user_list').value.split(',');
+    
+                username.addEventListener('keyup', function() {
+                    var x = username.value.toLowerCase().replace(/\s/g, '_');
+                    if (user_list.includes(x)) {
+                        document.getElementById("demo").innerHTML = "This username already exists: " + x;
+                        document.getElementById("demo").style.color = 'red'; 
+                    }
+                    else {
+                        document.getElementById("demo").innerHTML = "Username: " + x;
+                        document.getElementById("demo").style.color = 'black'; 
+                    }
+                });
+            }
+            window.onload = init;
+        </script>
+        {% set ids = ','.join(users) %} 
+        <input type="hidden" value="{{ ids }}" id="user_list">
+
+        <form name="new_user" action="insert" method="POST" enctype="multipart/form-data"> 
+            First Name: 
+            <input type="text" maxlength="50" size="12" name="firstname" id="firstname" value=""/> <br/> 
+            Last Name: 
+            <input type="text" size="12" name="lastname" id="lastname" value=""/> <br/>
+            User Name: 
+            <input type="text" maxlength="50" size="12" name="user_name" id="user_name" value=""/> <br/> 
+            Bio: 
+            <input type="text" size="12" name="description" id="description" value=""/> <br/>
+            <button type="submit" id="submit" value=""> Submit </button>
+        </form>
+    </body>
+</html>

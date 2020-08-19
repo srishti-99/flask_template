@@ -1,0 +1,52 @@
+<style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+</style>
+
+<!doctype html>
+
+  <body>
+    <h1> List of users </h1>
+    <div class="messages" border-color= black border-width= 3px>
+      {% include 'alerts.html' %}
+    </div>
+    <div class="table">
+      <table>
+        <br>
+                <td> Firstname </td>
+                <td> Lastname </td>
+                <td> Username </a></td>
+                <td> Bio </td>
+                <td> Update? </td>
+                <td> Delete? </td>
+        </br>
+        {% for key,value in (tables[0]).iterrows() %}
+            <tr>
+                <br>
+                <td>{{ value['firstname'] }}</td>
+                <td>{{ value['lastname'] }}</td>
+                <td>@{{ value['username'] }}</a></td>
+                <td>{{ value['description'] }}</a></td>
+                <td><a href="/update/{{ value['username'] }}"><button>Update</button></a></td>
+                <td><a href="/delete/{{ value['username'] }}"><button>Delete</button></a></td>
+                </br>
+            </tr> 
+        {% endfor %}
+      </table>
+    </div>
+
+    </br><div> Click here to <a href='/insert'>add new user</a></div>  </br>
+  </body>

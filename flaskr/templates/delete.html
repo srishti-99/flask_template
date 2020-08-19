@@ -1,0 +1,20 @@
+<html>
+    <head> 
+        <link rel="stylesheet" href={{ url_for('static', filename='insert.css') }}>
+        <title> Delete User </title>
+    <head>
+
+    <body>
+        <h1> Deleting {{ username }} </h1>
+        <div class="messages" border-color= black border-width= 3px>
+            {% include 'alerts.html' %}
+        </div>
+
+        <p id="demo"> </p>
+
+        <form name="new_user" action="{{username}}" method="POST" enctype="multipart/form-data"> 
+            <input type="submit" name="deletion" value="Delete"> 
+            <input type="submit" name="deletion" value="Cancel"> 
+        </form>
+    </body>
+</html>
