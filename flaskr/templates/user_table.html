@@ -1,23 +1,7 @@
-<style>
-    table {
-      font-family: arial, sans-serif;
-      border-collapse: collapse;
-      width: 100%;
-    }
-    
-    td, th {
-      border: 1px solid #dddddd;
-      text-align: left;
-      padding: 8px;
-    }
-    
-    tr:nth-child(even) {
-      background-color: #dddddd;
-    }
-</style>
-
 <!doctype html>
-
+  <head>
+    <link rel="stylesheet" href={{ url_for('static', filename='table.css') }}>
+  </head>
   <body>
     <h1> List of users </h1>
     <div class="messages" border-color= black border-width= 3px>
